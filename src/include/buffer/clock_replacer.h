@@ -15,6 +15,8 @@
 #include <list>
 #include <mutex>  // NOLINT
 #include <vector>
+#include <iostream>
+#include <atomic>
 
 #include "buffer/replacer.h"
 #include "common/config.h"
@@ -46,6 +48,12 @@ class ClockReplacer : public Replacer {
   size_t Size() override;
 
  private:
+  std::vector<bool> ref_flag;
+  std::vector<bool> in_cr;
+  std::mutex cr_lk;
+  size_t num_pages_cr;
+  size_t clock_hand;
+  std::atomic<size_t> cr_size;
   // TODO(student): implement me!
 };
 

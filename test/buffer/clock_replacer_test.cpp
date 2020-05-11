@@ -19,7 +19,7 @@
 
 namespace bustub {
 
-TEST(ClockReplacerTest, DISABLED_SampleTest) {
+TEST(ClockReplacerTest, SampleTest) {
   ClockReplacer clock_replacer(7);
 
   // Scenario: unpin six elements, i.e. add them to the replacer.
@@ -35,10 +35,13 @@ TEST(ClockReplacerTest, DISABLED_SampleTest) {
   // Scenario: get three victims from the clock.
   int value;
   clock_replacer.Victim(&value);
+  // std::cout << "SHIT" << value << std::endl;
   EXPECT_EQ(1, value);
   clock_replacer.Victim(&value);
+  // std::cout << "SHIT" << value << std::endl;
   EXPECT_EQ(2, value);
   clock_replacer.Victim(&value);
+  // std::cout << "SHIT" << value << std::endl;
   EXPECT_EQ(3, value);
 
   // Scenario: pin elements in the replacer.
